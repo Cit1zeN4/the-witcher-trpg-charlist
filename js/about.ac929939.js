@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkthe_witcher_trpg_charlist"]=self["webpackChunkthe_witcher_trpg_charlist"]||[]).push([[443],{168:function(t,r,e){e.r(r),e.d(r,{default:function(){return c}});var n=function(){var t=this;t._self._c;return t._m(0)},s=[function(){var t=this,r=t._self._c;return r("div",{staticClass:"about"},[r("h1",[t._v("This is an about page")])])}],u=e(1),i={},a=(0,u.Z)(i,n,s,!1,null,null,null),c=a.exports}}]);
+//# sourceMappingURL=about.ac929939.js.map
