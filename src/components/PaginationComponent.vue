@@ -1,12 +1,14 @@
 <template>
   <div class="d-flex justify-content-center">
     <div>
-      <b-button v-if="prev" @click="goPrev" class="mx-2" variant="primary"
-        >Предыдущая страница</b-button
-      >
-      <b-button v-if="next" @click="goNext" class="mx-2" variant="success"
-        >Следующая страница</b-button
-      >
+      <b-button-group>
+        <b-button v-if="prev" :disabled="!canPrev" @click="goPrev"
+          ><b-icon icon="arrow-left-square-fill"></b-icon
+        ></b-button>
+        <b-button v-if="next" :disabled="!canNext" @click="goNext"
+          ><b-icon icon="arrow-right-square-fill"></b-icon
+        ></b-button>
+      </b-button-group>
     </div>
   </div>
 </template>
@@ -21,6 +23,14 @@ export default {
     next: {
       type: String,
       default: undefined,
+    },
+    canNext: {
+      type: Boolean,
+      default: true,
+    },
+    canPrev: {
+      type: Boolean,
+      default: true,
     },
   },
   methods: {

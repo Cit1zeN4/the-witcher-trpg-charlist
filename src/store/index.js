@@ -7,11 +7,11 @@ export default new Vuex.Store({
   state: {
     charlist: {
       common: {
-        playerName: "Игрок",
-        name: "Персонаж",
-        race: "человек",
-        sex: "мужчина",
-        age: 20,
+        playerName: null,
+        name: null,
+        race: "Человек",
+        sex: "Мужчина",
+        age: null,
       },
       socialStatus: {
         north: "equal",
@@ -51,9 +51,21 @@ export default new Vuex.Store({
         },
       },
     },
+    other: {
+      sexOptions: ["Мужчина", "Женщина"],
+      raceOptions: ["Человек", "Эльфе", "Краснолюд", "Ведьмак"],
+    },
   },
   getters: {},
-  mutations: {},
+  mutations: {
+    saveNameViewData(state, data) {
+      console.log(data);
+      state.charlist.common.playerName = data.playerName;
+      state.charlist.common.name = data.name;
+      state.charlist.common.age = data.age;
+      state.charlist.common.sex = data.sex;
+    },
+  },
   actions: {},
   modules: {},
 });
