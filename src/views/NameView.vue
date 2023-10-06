@@ -57,6 +57,7 @@
           <div class="col-sm-12 col-md-6">
             <b-form-group label="Пол персонажа" label-for="sex"
               ><b-form-select
+                id="sex"
                 v-model="sex"
                 :options="sexOptions"
                 plain
@@ -89,7 +90,7 @@ export default {
       name: null,
       age: null,
       sex: null,
-      sexOptions: ["Мужчина", "Женщина"],
+      sexOptions: null,
     };
   },
   computed: {
@@ -120,8 +121,10 @@ export default {
     ...mapMutations({ saveState: "saveNameViewData" }),
   },
   beforeRouteLeave(to, from, next) {
-    if (this.dataState) next();
-    else
+    if (this.dataState) {
+      this.save();
+      next();
+    } else
       alert(
         "Прежде чем перейти на другую  страницу необходимо заполнить все необходимые поля"
       );
