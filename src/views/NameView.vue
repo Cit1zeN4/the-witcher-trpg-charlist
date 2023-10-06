@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-card title="Имя персонажа" class="mt-5 shadow">
+    <b-card title="Имя персонажа" class="mt-5 p-3 shadow">
       <b-form>
         <b-form-group
           class="mt-3"

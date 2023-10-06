@@ -14,11 +14,11 @@ export default new Vuex.Store({
         age: null,
       },
       socialStatus: {
-        north: "equal",
-        nilfgaard: "equal",
-        skellige: "equal",
-        dolBlatanna: "equal",
-        mahakam: "equal",
+        north: null,
+        nilfgaard: null,
+        skellige: null,
+        dolBlatanna: null,
+        mahakam: null,
       },
       features: [],
       stats: {
@@ -140,6 +140,53 @@ export default new Vuex.Store({
           bonus: null,
         },
       ],
+      humanSocialStatus: {
+        north: "Равенство",
+        nilfgaard: "Равенство",
+        skellige: "Равенство",
+        dolBlatanna: "Ненависть",
+        mahakam: "Терпимость",
+      },
+      elfSocialStatus: {
+        north: "Ненависть",
+        nilfgaard: "Равенство",
+        skellige: "Равенство",
+        dolBlatanna: "Равенство",
+        mahakam: "Равенство",
+      },
+      dwarfSocialStatus: {
+        north: "Терпимость",
+        nilfgaard: "Равенство",
+        skellige: "Равенство",
+        dolBlatanna: "Равенство",
+        mahakam: "Равенство",
+      },
+      witcherSocialStatus: {
+        north: "Ненависть и опасение",
+        nilfgaard: "Ненависть и опасение",
+        skellige: "Терпимость",
+        dolBlatanna: "Терпимость",
+        mahakam: "Терпимость",
+      },
+      mageSocialStatus: {
+        north: "Ненависть и опасение",
+        nilfgaard: "Терпимость",
+        skellige: "Терпимость",
+        dolBlatanna: "Равенство",
+        mahakam: "Терпимость",
+      },
+      equalitySocialStatusDescription:
+        "Персонажи с социальным статусом равенство считаются равными. Они не получают штрафов или бонусов к социальному взаимодействию. В первую очередь их будут судить по внешности и поступкам, а не по расе.",
+      toleranceSocialStatusDescription:
+        "Персонажей с социальным статусом терпимость принимают в обществе, но не особо уважают и не считают равными. Они получают штраф -1 к Соблазнению, Харизме, Убеждению и Лидерству.",
+      fearSocialStatusDescription:
+        "Персонажи с социальным статусом опасение считаются страшными для среднестатистического обывателя. Ваш персонаж может приобрести данный социальный статус только в том случае, если станет ведьмаком или получить заметный и уродливый шрам. Вы также можете получить социальный статус опасение по решению ведущего за определённые поступки. Персонажи с социальным статусом опасение получают бонус +1 к Запугиванию и штраф -1 к Харизме.",
+      hateSocialStatusDescription:
+        "Персонажей с социальным статусом ненависть большинство презирает. Их не всегда изгоняют, но зачастую они становятся жертвами расовой агрессии и преступлений на почве нетерпимости. Персонажи с социальным статусом ненависть получают штраф -2 к Соблазнению, Харизме, Убеждению и Лидерству.",
+      sameRaceDescription:
+        "Важно помнить, что на вражеской территории вы можете столкнуться с представителями собственной расы. Они всегда будут относиться к вам как к равному, если только не успели рассориться с вами лично или со своими собратьями в целом.",
+      friendshipDescription:
+        "Дружба - социальный статус определяет, как к вам и к представителям вашей расы относятся незнакомцы. Но если вы эльф, а ваш лучший друг - человек, то он не будет вас ненавидеть. Тоже самое касается влюблённых и, порой, некровных родственников.",
     },
   },
   getters: {},
@@ -153,6 +200,16 @@ export default new Vuex.Store({
     saveRaceViewData(state, data) {
       state.charlist.common.race = data.race;
       state.charlist.features = data.features;
+      if (data.race === "Человек")
+        state.charlist.socialStatus = state.other.humanSocialStatus;
+      if (data.race === "Эльф")
+        state.charlist.socialStatus = state.other.elfSocialStatus;
+      if (data.race === "Краснолюд")
+        state.charlist.socialStatus = state.other.dwarfSocialStatus;
+      if (data.race === "Ведьмак")
+        state.charlist.socialStatus = state.other.witcherSocialStatus;
+
+      //TODO: Социальный статус для мага.
     },
   },
   actions: {},
