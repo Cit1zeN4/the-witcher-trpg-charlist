@@ -119,6 +119,13 @@ export default {
     },
     ...mapMutations({ saveState: "saveNameViewData" }),
   },
+  beforeRouteLeave(to, from, next) {
+    if (this.dataState) next();
+    else
+      alert(
+        "Прежде чем перейти на другую  страницу необходимо заполнить все необходимые поля"
+      );
+  },
   mounted() {
     var common = this.$store.state.charlist.common;
     var other = this.$store.state.other;
