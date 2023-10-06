@@ -38,7 +38,7 @@
         </b-form-group>
 
         <div class="row mt-3">
-          <div class="col-sm-12 col-md-6">
+          <div class="col-sm-12 col-md-6 mb-3">
             <b-form-group label="Возраст персонажа" label-for="age"
               ><b-form-input
                 id="age"
@@ -54,7 +54,7 @@
               </b-form-invalid-feedback>
             </b-form-group>
           </div>
-          <div class="col-sm-12 col-md-6">
+          <div class="col-sm-12 col-md-6 mb-3">
             <b-form-group label="Пол персонажа" label-for="sex"
               ><b-form-select
                 id="sex"
@@ -68,7 +68,6 @@
       </b-form>
     </b-card>
     <pagination-component
-      class="mt-4"
       next="/race"
       :can-next="dataState"
       @goNext="save"

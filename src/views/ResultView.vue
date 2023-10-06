@@ -2,7 +2,7 @@
   <div>
     <h1>Result</h1>
     <info-component></info-component>
-    <pagination-component class="mt-4" prev="/shop"></pagination-component>
+    <pagination-component prev="/shop"></pagination-component>
   </div>
 </template>
 

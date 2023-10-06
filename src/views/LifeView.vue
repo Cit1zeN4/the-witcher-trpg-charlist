@@ -2,7 +2,6 @@
   <div>
     <h1>Жизненный путь:</h1>
     <pagination-component
-      class="mt-4"
       prev="/race"
       next="/profession"
     ></pagination-component>

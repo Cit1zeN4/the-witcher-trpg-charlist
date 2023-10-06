@@ -1,11 +1,7 @@
 <template>
   <div>
     <h1>Начальный капитал:</h1>
-    <pagination-component
-      class="mt-4"
-      prev="/skills"
-      next="/shop"
-    ></pagination-component>
+    <pagination-component prev="/skills" next="/shop"></pagination-component>
   </div>
 </template>
 

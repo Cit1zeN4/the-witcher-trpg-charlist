@@ -1,11 +1,7 @@
 <template>
   <div>
     <h1>Профессия:</h1>
-    <pagination-component
-      class="mt-4"
-      prev="/life"
-      next="/stats"
-    ></pagination-component>
+    <pagination-component prev="/life" next="/stats"></pagination-component>
   </div>
 </template>
 

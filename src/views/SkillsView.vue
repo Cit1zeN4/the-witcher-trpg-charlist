@@ -1,11 +1,7 @@
 <template>
   <div>
     <h1>Основные навыки:</h1>
-    <pagination-component
-      class="mt-4"
-      prev="/stats"
-      next="/capital"
-    ></pagination-component>
+    <pagination-component prev="/stats" next="/capital"></pagination-component>
   </div>
 </template>
 

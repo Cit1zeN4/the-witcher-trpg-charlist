@@ -1,11 +1,21 @@
 <template>
-  <div class="d-flex justify-content-center">
+  <div class="d-flex justify-content-center my-5">
     <div>
       <b-button-group>
-        <b-button v-if="prev" :disabled="!canPrev" @click="goPrev"
+        <b-button
+          v-if="prev"
+          :disabled="!canPrev"
+          @click="goPrev"
+          variant="success"
+          size="lg"
           ><b-icon icon="arrow-left-square-fill"></b-icon
         ></b-button>
-        <b-button v-if="next" :disabled="!canNext" @click="goNext"
+        <b-button
+          v-if="next"
+          :disabled="!canNext"
+          @click="goNext"
+          variant="success"
+          size="lg"
           ><b-icon icon="arrow-right-square-fill"></b-icon
         ></b-button>
       </b-button-group>

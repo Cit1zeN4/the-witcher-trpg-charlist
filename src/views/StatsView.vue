@@ -2,7 +2,6 @@
   <div>
     <h1>Параметры:</h1>
     <pagination-component
-      class="mt-4"
       prev="/profession"
       next="/skills"
     ></pagination-component>

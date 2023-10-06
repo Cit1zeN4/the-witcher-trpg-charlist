@@ -27,7 +27,6 @@
       </div>
     </b-card>
     <pagination-component
-      class="mt-4"
       prev="/"
       next="/life"
       @goPrev="save"
